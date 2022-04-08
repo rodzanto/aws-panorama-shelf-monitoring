@@ -1,9 +1,10 @@
 html {
-  background: url("./static/media/background.png") no-repeat center center fixed;
+  background: url("./static/media/banner-aws.jpg") repeat left center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: 100% 200%;
+  background-color: #253040;
 }
 
 body {

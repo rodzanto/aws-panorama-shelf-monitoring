@@ -5,11 +5,11 @@ import Typography from "@material-ui/core/Typography";
 
 function Header() {
   return (
-    <Grid item xs={10}>
+    <Grid item xs={8}>
       <Paper style={{ margin: 10 }}>
-        <Typography variant="h2" style={{ textAlign: "center" }}>
-          AWS Panorama |{" "}
-          <span style={{ color: "#FF9900" }}>Shelf Monitoring</span>
+        <Typography variant="h4" style={{ textAlign: "center" }}>
+          The Store of the Future - {" "}
+          <span style={{ color: "#FF9900" }}>Retail Inventory Monitoring</span>
         </Typography>
       </Paper>
     </Grid>

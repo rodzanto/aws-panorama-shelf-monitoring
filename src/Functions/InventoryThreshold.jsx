@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
 
 function InventoryThreshold() {
   const classes = useStyles();
-  const productType = "BOTTLE";
+  const productType = "lays";
+  const product = "snacks";
 
   const [thresholdState, setThreshold] = React.useState({ threshold: "" });
 
@@ -38,6 +39,7 @@ function InventoryThreshold() {
       const threshold = await API.graphql(
         graphqlOperation(getShelfMonitor, {
           ProductType: productType,
+          Product: product
         }),
       );
       if (threshold.data.getShelfMonitor == null) {
@@ -60,6 +62,7 @@ function InventoryThreshold() {
         graphqlOperation(updateShelfMonitor, {
           input: {
             ProductType: productType,
+            Product: product,
             Threshold: threshold,
             s3Uri: "./default.png",
             count: 9000,
@@ -74,6 +77,7 @@ function InventoryThreshold() {
           graphqlOperation(createShelfMonitor, {
             input: {
               ProductType: productType,
+              Product: product,
               Threshold: threshold,
             },
           }),
@@ -95,15 +99,14 @@ function InventoryThreshold() {
   };
 
   return (
-    <Grid item xs={5}>
+    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" container sm={2}>
       <Paper>
-        <Typography variant="h5" style={{ textAlign: "center", padding: 10 }}>
-          Specify how low the item count should be before you get notified of a
-          low inventory.
+        <Typography variant="h6" style={{ textAlign: "center", padding: 5 }}>
+          Inventory threshold
         </Typography>
         <Box display="flex" justifyContent="center">
           <FormControl className={classes.formControl}>
-            <InputLabel style={{ fontSize: 20, color: "#FF9900" }}>
+            <InputLabel style={{ fontSize: 18, color: "#FF9900" }}>
               <em>Alert Threshold</em>
             </InputLabel>
             <Select

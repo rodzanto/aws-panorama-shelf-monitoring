@@ -19,6 +19,7 @@ export const onUpdateShelfMonitor = /* GraphQL */ `
       s3Uri
       count
       ProductType
+      Product
       Threshold
       createdAt
       updatedOn

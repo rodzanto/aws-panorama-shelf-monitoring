@@ -16,6 +16,7 @@ export const getShelfMonitor = /* GraphQL */ `
 export const listShelfMonitors = /* GraphQL */ `
   query ListShelfMonitors(
     $ProductType: ProductType
+    $Product: Product
     $filter: ModelshelfMonitorFilterInput
     $limit: Int
     $nextToken: String
@@ -23,6 +24,7 @@ export const listShelfMonitors = /* GraphQL */ `
   ) {
     listShelfMonitors(
       ProductType: $ProductType
+      Product: $Product
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -32,6 +34,7 @@ export const listShelfMonitors = /* GraphQL */ `
         s3Uri
         count
         ProductType
+        Product
         Threshold
         createdAt
         updatedOn

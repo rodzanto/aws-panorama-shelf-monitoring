@@ -1,0 +1,29 @@
+{
+    "main": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-smartshelf-main-135723-authRole",
+            "UnauthRoleArn": "arn:aws:iam::102895080962:role/amplify-smartshelf-main-135723-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::102895080962:role/amplify-smartshelf-main-135723-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-smartshelf-main-135723-deployment",
+            "UnauthRoleName": "amplify-smartshelf-main-135723-unauthRole",
+            "StackName": "amplify-smartshelf-main-135723",
+            "StackId": "arn:aws:cloudformation:eu-west-1:102895080962:stack/amplify-smartshelf-main-135723/a6a0e3b0-b67a-11ec-9a05-066b71c3ada9",
+            "AmplifyAppId": "d2lnuqear4g87j"
+        },
+        "categories": {
+            "function": {
+                "smartshelf72d32494": {
+                    "deploymentBucketName": "amplify-smartshelf-main-135723-deployment",
+                    "s3Key": "amplify-builds/smartshelf72d32494-586834726a5867756e33-build.zip"
+                }
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d2lnuqear4g87j",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}
