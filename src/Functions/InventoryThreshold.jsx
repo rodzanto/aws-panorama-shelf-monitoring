@@ -2,12 +2,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 import React, { useEffect } from "react";
-import MenuItem from "@material-ui/core/MenuItem";
+/*import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import { Box, InputLabel } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";*/
+/*import { makeStyles } from "@material-ui/core/styles";*/
+/*import { Box, InputLabel } from "@material-ui/core";*/
 import Amplify, { API, graphqlOperation } from "aws-amplify";
 import awsconfig from "../aws-exports";
 import { getShelfMonitor } from "../graphql/queries";
@@ -15,7 +15,7 @@ import { updateShelfMonitor, createShelfMonitor } from "../graphql/mutations";
 
 Amplify.configure(awsconfig);
 
-const useStyles = makeStyles((theme) => ({
+/*const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 140,
@@ -23,10 +23,10 @@ const useStyles = makeStyles((theme) => ({
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
-}));
+}));*/
 
 function InventoryThreshold() {
-  const classes = useStyles();
+  /*const classes = useStyles();*/
   const productType = "lays";
   const product = "snacks";
 
