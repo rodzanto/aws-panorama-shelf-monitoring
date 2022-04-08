@@ -200,31 +200,37 @@ function Body() {
             </thead>
             <tbody>
                 <tr>
-                    <td><img src={shelf.s3UriSnacks} alt="Detections"  width="10%"/></td>
+                    <td><img src="../static/media/lays.png" alt="Lays"  width="10%"/></td>
                     <td>Fries (Lays)</td>
                     <td>{shelf.countLays}</td>
                 </tr>
                 <tr> {/* class="active-row" */}
+                    <td><img src="../static/media/kinder.png" alt="Kinder"  width="10%"/></td>
                     <td>Kinder bar</td>
                     <td>{shelf.countKinder}</td>
                 </tr>
                 <tr>
+                    <td><img src="../static/media/mm.png" alt="M&M"  width="10%"/></td>
                     <td>M&Ms</td>
                     <td>{shelf.countMM}</td>
                 </tr>
                 <tr>
+                    <td><img src="../static/media/sticker.png" alt="Stickers"  width="10%"/></td>
                     <td>Stickers</td>
                     <td>{shelf.countSticker}</td>
                 </tr>
                 <tr>
+                    <td><img src="../static/media/pen.png" alt="Pens"  width="10%"/></td>
                     <td>Pen</td>
                     <td>{shelf.countPen}</td>
                 </tr>
                 <tr>
+                    <td><img src="../static/media/coke.png" alt="Coke"  width="10%"/></td>
                     <td>Coke</td>
                     <td>{shelf.countCoke}</td>
                 </tr>
                 <tr>
+                    <td><img src="../static/media/h2o.png" alt="H2O"  width="10%"/></td>
                     <td>H2O</td>
                     <td>{shelf.countH2O}</td>
                 </tr>
