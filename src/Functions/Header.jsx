@@ -5,11 +5,10 @@ import Typography from "@material-ui/core/Typography";
 
 function Header() {
   return (
-    <Grid item xs={8}>
-      <Paper style={{ margin: 10 }}>
-        <Typography variant="h4" style={{ textAlign: "center" }}>
-          The Store of the Future - {" "}
-          <span style={{ color: "#FF9900" }}>Retail Inventory Monitoring</span>
+    <Grid item xs={4}>
+      <Paper style={{ margin: 10, backgroundColor: "#ee6002"}}>
+        <Typography variant="h4" style={{ textAlign: "center", color: "white"}}>
+          The Store of the Future
         </Typography>
       </Paper>
     </Grid>

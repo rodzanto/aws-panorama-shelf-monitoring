@@ -4,7 +4,7 @@
 /*import Grid from "@material-ui/core/Grid";*/
 /*import Paper from "@material-ui/core/Paper";*/
 /*import Typography from "@material-ui/core/Typography";*/
-import { makeStyles } from "@material-ui/core/styles";
+/*import { makeStyles } from "@material-ui/core/styles";*/
 import React, { useEffect, useState, useRef } from "react";
 import Typography from "@material-ui/core/Typography";
 
@@ -185,60 +185,61 @@ function Body() {
     <div class="float-container">
 
         <div class="float-child">
-          <Typography variant="h6" style={{ textAlign: "center", padding: 2, color: "white" }}>
+          <Typography variant="h6" style={{ textAlign: "center", padding: 2, color: "white", fontWeight: "bold" }}>
             Shelf Products Monitoring
           </Typography>
           <img src={shelf.s3UriSnacks} alt="Detections"  width="100%"/>
-          <Typography variant="h6" style={{ textAlign: "center", padding: 2, color: "white" }}>
+          <Typography variant="h6" style={{ textAlign: "center", padding: 2, color: "white", fontWeight: "bold"  }}>
             Beverages Monitoring
           </Typography>
           <img src={shelf.s3UriBeverages} alt="Detections" width="70%"/>        
         </div>
 
         <div class="float-child">
-          <Typography variant="h6" style={{ textAlign: "center", padding: 2, color: "white" }}>
+          <Typography variant="h6" style={{ textAlign: "center", padding: 2, color: "white", fontWeight: "bold"  }}>
             Real-time Inventory
           </Typography>
           <table class="styled-table">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Product</th>
                     <th>Inventory Count</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><img src={lays} alt="Lays"  width="20%"/></td>
+                    <td width="40%"><img src={lays} alt="Lays"  width="30%"/></td>
                     <td>Fries (Lays)</td>
                     <td>{shelf.countLays}</td>
                 </tr>
                 <tr> {/* class="active-row" */}
-                    <td><img src={kinder} alt="Kinder"  width="20%"/></td>
+                    <td><img src={kinder} alt="Kinder"  width="30%"/></td>
                     <td>Kinder bar</td>
                     <td>{shelf.countKinder}</td>
                 </tr>
                 <tr>
-                    <td><img src={mm} alt="M&M"  width="20%"/></td>
+                    <td><img src={mm} alt="M&M"  width="30%"/></td>
                     <td>M&Ms</td>
                     <td>{shelf.countMM}</td>
                 </tr>
                 <tr>
-                    <td><img src={sticker} alt="Stickers"  width="20%"/></td>
+                    <td><img src={sticker} alt="Stickers"  width="30%"/></td>
                     <td>Stickers</td>
                     <td>{shelf.countSticker}</td>
                 </tr>
                 <tr>
-                    <td><img src={pen} alt="Pens"  width="20%"/></td>
+                    <td><img src={pen} alt="Pens"  width="30%"/></td>
                     <td>Pen</td>
                     <td>{shelf.countPen}</td>
                 </tr>
                 <tr>
-                    <td><img src={coke} alt="Coke"  width="20%"/></td>
+                    <td><img src={coke} alt="Coke"  width="30%"/></td>
                     <td>Coke</td>
                     <td>{shelf.countCoke}</td>
                 </tr>
                 <tr>
-                    <td><img src={h2o} alt="H2O"  width="20%"/></td>
+                    <td><img src={h2o} alt="H2O"  width="30%"/></td>
                     <td>H2O</td>
                     <td>{shelf.countH2O}</td>
                 </tr>
