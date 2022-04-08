@@ -13,18 +13,26 @@ import awsconfig from "../aws-exports";
 import { onUpdateShelfMonitor } from "../graphql/subscriptions";
 /*import { Container } from "@material-ui/core";*/
 
+import lays from "../static/media/lays.png";
+import kinder from "../static/media/kinder.png";
+import mm from "../static/media/mm.png";
+import sticker from "../static/media/sticker.png";
+import pen from "../static/media/pen.png";
+import coke from "../static/media/coke.png";
+import h2o from "../static/media/h2o.png";
+
 Amplify.configure(awsconfig);
 
-const useStyles = makeStyles(() => ({
+/*const useStyles = makeStyles(() => ({
   image: {
     width: "100%",
     height: "100%",
     margin: "auto",
   },
-}));
+}));*/
 
 function Body() {
-  const classes = useStyles();
+  /*const classes = useStyles();*/
 
   const initialState = {
     s3UriKinder: "./default.png",
@@ -200,37 +208,37 @@ function Body() {
             </thead>
             <tbody>
                 <tr>
-                    <td><img src="../static/media/lays.png" alt="Lays"  width="10%"/></td>
+                    <td><img src={lays} alt="Lays"  width="20%"/></td>
                     <td>Fries (Lays)</td>
                     <td>{shelf.countLays}</td>
                 </tr>
                 <tr> {/* class="active-row" */}
-                    <td><img src="../static/media/kinder.png" alt="Kinder"  width="10%"/></td>
+                    <td><img src={kinder} alt="Kinder"  width="20%"/></td>
                     <td>Kinder bar</td>
                     <td>{shelf.countKinder}</td>
                 </tr>
                 <tr>
-                    <td><img src="../static/media/mm.png" alt="M&M"  width="10%"/></td>
+                    <td><img src={mm} alt="M&M"  width="20%"/></td>
                     <td>M&Ms</td>
                     <td>{shelf.countMM}</td>
                 </tr>
                 <tr>
-                    <td><img src="../static/media/sticker.png" alt="Stickers"  width="10%"/></td>
+                    <td><img src={sticker} alt="Stickers"  width="20%"/></td>
                     <td>Stickers</td>
                     <td>{shelf.countSticker}</td>
                 </tr>
                 <tr>
-                    <td><img src="../static/media/pen.png" alt="Pens"  width="10%"/></td>
+                    <td><img src={pen} alt="Pens"  width="20%"/></td>
                     <td>Pen</td>
                     <td>{shelf.countPen}</td>
                 </tr>
                 <tr>
-                    <td><img src="../static/media/coke.png" alt="Coke"  width="10%"/></td>
+                    <td><img src={coke} alt="Coke"  width="20%"/></td>
                     <td>Coke</td>
                     <td>{shelf.countCoke}</td>
                 </tr>
                 <tr>
-                    <td><img src="../static/media/h2o.png" alt="H2O"  width="10%"/></td>
+                    <td><img src={h2o} alt="H2O"  width="20%"/></td>
                     <td>H2O</td>
                     <td>{shelf.countH2O}</td>
                 </tr>

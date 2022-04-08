@@ -2,8 +2,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 import React, { useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -99,29 +97,27 @@ function InventoryThreshold() {
   };
 
   return (
-    <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start" container sm={2}>
-      <Paper>
-        <Typography variant="h6" style={{ textAlign: "center", padding: 5 }}>
-          Inventory threshold
-        </Typography>
-        <Box display="flex" justifyContent="center">
-          <FormControl className={classes.formControl}>
-            <InputLabel style={{ fontSize: 18, color: "#FF9900" }}>
-              <em>Alert Threshold</em>
-            </InputLabel>
-            <Select
-              id="select-threshold"
-              value={thresholdState.threshold}
-              onChange={handleChange}
-            >
-              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                <MenuItem value={num}>{num}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Box>
-      </Paper>
-    </Grid>
+    <div>
+      <Typography variant="h6" style={{ textAlign: "center", padding: 5 }}>
+        Inventory threshold
+      </Typography>
+      <Box display="flex" justifyContent="center">
+        <FormControl className={classes.formControl}>
+          <InputLabel style={{ fontSize: 18, color: "#FF9900" }}>
+            <em>Alert Threshold</em>
+          </InputLabel>
+          <Select
+            id="select-threshold"
+            value={thresholdState.threshold}
+            onChange={handleChange}
+          >
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+              <MenuItem value={num}>{num}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </Box>
+    </div>
   );
 }
 
