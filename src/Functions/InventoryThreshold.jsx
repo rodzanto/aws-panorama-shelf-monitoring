@@ -98,6 +98,7 @@ function InventoryThreshold() {
 
   return (
     <div>
+{/*
       <Typography variant="h6" style={{ textAlign: "center", padding: 5 }}>
         Inventory threshold
       </Typography>
@@ -106,19 +107,17 @@ function InventoryThreshold() {
           <InputLabel style={{ fontSize: 18, color: "#FF9900" }}>
             <em>Alert Threshold</em>
           </InputLabel>
-          <Select
-            id="select-threshold"
-            value={thresholdState.threshold}
-            onChange={handleChange}
-          >
+          <Select id="select-threshold" value={thresholdState.threshold} onChange={handleChange}>
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-              <MenuItem value={num}>{num}</MenuItem>
+              <MenuItem value={num}>Threshold: {num}</MenuItem>
             ))}
           </Select>
         </FormControl>
       </Box>
+            */}
     </div>
   );
+
 }
 
 export default InventoryThreshold;

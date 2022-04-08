@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Paper } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
+/*import Grid from "@material-ui/core/Grid";*/
 import Typography from "@material-ui/core/Typography";
 import logo from "../static/media/aws.png";
 
