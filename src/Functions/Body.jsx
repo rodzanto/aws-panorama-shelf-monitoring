@@ -20,6 +20,7 @@ import sticker from "../static/media/sticker.png";
 import pen from "../static/media/pen.png";
 import coke from "../static/media/coke.png";
 import h2o from "../static/media/h2o.png";
+import favorite_walkers from "../static/media/favorite_walkers.png";
 
 Amplify.configure(awsconfig);
 
@@ -188,10 +189,13 @@ function Body() {
           <Typography variant="h6" style={{ textAlign: "center", padding: 2, color: "white", fontWeight: "bold" }}>
             Shelf Products Monitoring
           </Typography>
+          <p></p>
           <img src={shelf.s3UriSnacks} alt="Detections"  width="100%"/>
+          <p></p>
           <Typography variant="h6" style={{ textAlign: "center", padding: 2, color: "white", fontWeight: "bold"  }}>
             Beverages Monitoring
           </Typography>
+          <p></p>
           <img src={shelf.s3UriBeverages} alt="Detections" width="70%"/>        
         </div>
 
@@ -245,6 +249,11 @@ function Body() {
                 </tr>
             </tbody>
           </table>
+          <Typography variant="h6" style={{ textAlign: "center", padding: 2, color: "white", fontWeight: "bold"  }}>
+            Personalization
+          </Typography>
+          <p></p>
+          <img src={favorite_walkers} alt="Favorite Walkers"  width="100%"/>
         </div>
     </div>
 
