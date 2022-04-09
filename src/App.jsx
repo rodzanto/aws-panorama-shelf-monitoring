@@ -14,6 +14,7 @@ import Grid from "@material-ui/core/Grid";
 
 import { Header, Body, InventoryThreshold } from "./Functions";
 
+
 function App() {
   return (
     <div>
@@ -22,6 +23,7 @@ function App() {
         <Body />
         <InventoryThreshold />
       </Grid>
+      <h1>                   </h1>
     </div>
   );
 }
