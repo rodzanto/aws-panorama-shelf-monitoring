@@ -21,7 +21,6 @@ import sticker from "../static/media/sticker.png";
 import pen from "../static/media/pen.png";
 import coke from "../static/media/coke.png";
 import h2o from "../static/media/h2o.png";
-import favorite_walkers from "../static/media/favorite_walkers.png";
 
 Amplify.configure(awsconfig);
 
@@ -215,11 +214,6 @@ function Body() {
           <Card image={coke} title="Coke" count={shelf.countCoke}></Card>
           <Card image={h2o} title="Water" count={shelf.countH2O}></Card>
           <p></p>
-          <Typography variant="h5" style={{ textAlign: "center", padding: 2, color: "white", fontWeight: "bold"  }}>
-            Personalization
-          </Typography>
-          <p></p>
-          <img src={favorite_walkers} alt="Favorite Walkers"  width="103%" class="center"/>
         </div>
     </div>
 
