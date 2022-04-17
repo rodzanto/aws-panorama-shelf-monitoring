@@ -6,7 +6,7 @@ export default class Card extends React.Component{
         return (
             <div className="card">
                 <div className="card-logo">
-                    <img src={this.props.image} width='100' />
+                    <img src={this.props.image} width='100' alt=''/>
                 </div>
                 <div className="selected">
                   <h1>{this.props.title}</h1>  

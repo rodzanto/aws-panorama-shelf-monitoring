@@ -30,7 +30,7 @@ function InventoryThreshold() {
   const productType = "lays";
   const product = "snacks";
 
-  const [thresholdState, setThreshold] = React.useState({ threshold: "" });
+  /*const [thresholdState, setThreshold] = React.useState({ threshold: "" });*/
 
   async function getThreshold() {
     try {
