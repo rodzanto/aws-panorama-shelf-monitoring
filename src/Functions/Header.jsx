@@ -8,11 +8,11 @@ function Header() {
   return (
     <div>
       <div>
-        <img src={logo} alt="AWS" style={{ width: "10%", position: "relative", left: "-100px", top: "60px", padding: "10px, 10px"}}/>
+        <img src={logo} alt="AWS" style={{ width: "10%", position: "relative", left: "-100px", top: "45px", padding: "10px, 10px"}}/>
       </div>
       <div>
-        <Paper style={{ margin: 10, width: "600px", backgroundColor: "white"}}>
-          <Typography variant="h3" style={{ fontWeight: 600, textAlign: "center", color: "black"}}>
+        <Paper style={{ margin: 5, width: "550px", backgroundColor: "white"}}>
+          <Typography variant="h4" style={{ fontWeight: 600, textAlign: "center", color: "black"}}>
           The Store of the Future
           </Typography>
         </Paper>
