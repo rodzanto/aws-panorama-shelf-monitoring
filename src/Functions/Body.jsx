@@ -99,7 +99,7 @@ function Body() {
           setShelf({
             ...shelf,
             s3UriSnacks: dataSnacks.s3Uri,
-            countLays: prevcountLays.count,
+            countLays: prevcountLays.current,
             countKinder: prevcountKinder.current,
             countMM: dataSnacks.count,
             countSticker: prevcountSticker.current,
@@ -147,7 +147,7 @@ function Body() {
           setShelf({
             ...shelf,
             s3UriBeverages: dataSnacks.s3Uri,
-            countLays: dataSnacks.count,
+            countLays: prevcountLays.current,
             countKinder: prevcountKinder.current,
             countMM: prevcountMM.current,
             countSticker: prevcountSticker.current,
