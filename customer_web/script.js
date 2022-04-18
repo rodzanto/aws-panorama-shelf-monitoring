@@ -12,59 +12,75 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 let dynamoClient = new AWS.DynamoDB();
 
 //Keep track of counts per product...
-var Counts = {
-    "lays": 0,
-    "kinder": 0,
-    "m&m": 0,
-    "sticker": 0,
-    "pen": 0,
-    "coke": 0,
-    "h2o": 0
-};
+/*lays,kinder,m&m,sticker,pen,coke,h2o*/
+var Counts = [1000,1000,1000,1000,1000,1000,1000];
+var Purch = [0,0,0,0,0,0,0];
+var totalcost = 0;
+var Price = [1,1,1,1,1,1,1]; //Update with your products prices
 
 function renderItems(items) {
     //Print timestamp in receipt...
     var today = new Date().toLocaleString();
     document.getElementById("time").innerHTML=today;
-
-    //Add header to receipt table...
     var Receipt = document.getElementById("myReceipt");
-    Receipt.innerHTML = `
-        <tr class="tabletitle">
-        <td class="item"><h2>Item</h2></td>
-        <td class="Hours"><h2>Qty</h2></td>
-        <td class="Rate"><h2>Sub Total</h2></td>
-        </tr>
-    `
 
     //Add purchased items to receipt...
     for(var i=0, len = items.length; i<len; i++) {
-        if (items[i].count.N >= 1) {
-            /*console.log(JSON.stringify(items[i].ProductType.S));*/
-            var row = Receipt.insertRow(1);
-            row.className = "service";
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            cell1.innerHTML = items[i].ProductType.S;
-            cell2.innerHTML = items[i].count.N;
-            cell3.innerHTML = "€1.00";
-            cell1.className = "itemtext";
-            cell2.className = "itemtext";
-            cell3.className = "itemtext";
+        if (Counts[i] == 1000) {
+            //First page load... update counts to inventory numbers...
+            Counts[i] = items[i].count.N;
+        }
+        else if (items[i].count.N < Counts[i]) {
+            //Item count is reducing (i.e. customer purchasing)...
+            Purch[i]++;
+            var subtotal = Purch[i]*Price[i];
+            totalcost = totalcost + Price[i];
+            if (Purch[i] == 1) {
+                //First time this item is purchased...
+                var row = Receipt.insertRow(1);
+                row.className = "service";
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = items[i].ProductType.S;
+                cell2.innerHTML = Purch[i];
+                cell3.innerHTML = `€${subtotal.toFixed(2)}`;
+                cell1.className = "itemtext";
+                cell2.className = "itemtext";
+                cell3.className = "itemtext";    
+            }
+            else {
+                //Purchasing another item...
+                for (var j=0; j<Receipt.rows.length; j++) {
+                    if (Receipt.rows[j].cells[0].innerHTML == items[i].ProductType.S) {
+                        Receipt.rows[j].cells[1].innerHTML = Purch[i];
+                        Receipt.rows[j].cells[2].innerHTML = `€${subtotal.toFixed(2)}`;
+                    }
+                }
+            }
+            Counts[i] = items[i].count.N;
+            if (i == 0) { //Lays
+                document.getElementById("myFavorite").src='./media/favorite_walkers.png';
+            }
+            else if (i == 1 || i == 2) { //Kinder or M&M
+                document.getElementById("myFavorite").src='./media/favorite_pistachio.png';
+            }
+            else if (i == 3 || i == 4) { //Sticker or Pen
+                document.getElementById("myFavorite").src='./media/favorite_markers.png';
+            }
+            else if (i == 5 || i == 6) { //Coke or H2O
+                document.getElementById("myFavorite").src='./media/favorite_kombucha.png';
+            }
+        }
+        else if (items[i].count.N > Counts[i]) {
+            // Item count is increasing... (i.e. inventory replenishment)...
+            Counts[i] = items[i].count.N;
         }
     }
 
     //Add total cost to receipt...
-    var row = Receipt.insertRow(Receipt.rows.length);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    cell1.innerHTML = `<td></td>`;
-    cell2.innerHTML = `<td class="Rate"><h2>Total</h2></td>`;
-    var totalcost = (Receipt.rows.length - 2)*1;
-    cell3.innerHTML = `<td class="payment"><h2>€${totalcost.toFixed(2)}</h2></td>`;
-    row.className = "tabletitle";
+    var lastrow = Receipt.lastElementChild.lastElementChild;
+    lastrow.cells[2].innerHTML = `<td class="payment"><h2>€${totalcost.toFixed(2)}</h2></td>`;
  
 }
 
