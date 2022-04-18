@@ -59,16 +59,17 @@ function renderItems(items) {
                 }
             }
             Counts[i] = items[i].count.N;
-            if (i == 0) { //Lays
+            //Personalization...
+            if (items[i].ProductType.S == 'lays') {
                 document.getElementById("myFavorite").src='./media/favorite_walkers.png';
             }
-            else if (i == 1 || i == 2) { //Kinder or M&M
+            else if (items[i].ProductType.S == 'kinder' || items[i].ProductType.S == 'mm') {
                 document.getElementById("myFavorite").src='./media/favorite_pistachio.png';
             }
-            else if (i == 3 || i == 4) { //Sticker or Pen
+            else if (items[i].ProductType.S == 'sticker' || items[i].ProductType.S == 'pen') {
                 document.getElementById("myFavorite").src='./media/favorite_markers.png';
             }
-            else if (i == 5 || i == 6) { //Coke or H2O
+            else if (items[i].ProductType.S == 'coke' || items[i].ProductType.S == 'h2o') {
                 document.getElementById("myFavorite").src='./media/favorite_kombucha.png';
             }
         }
