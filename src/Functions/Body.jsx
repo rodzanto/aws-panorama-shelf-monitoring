@@ -63,7 +63,7 @@ function Body() {
         if (dataSnacks.s3Uri === null) {
             console.log("null");
         }
-        if (dataSnacks.Product === "snacks" & dataSnacks.ProductType === "lays") {
+        if (dataSnacks.Product === "snacks" & dataSnacks.ProductType === "crisps") {
           setShelf({
             ...shelf,
             s3UriSnacks: dataSnacks.s3Uri,
