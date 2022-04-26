@@ -206,7 +206,7 @@ function Body() {
             Real-time Inventory
           </Typography>
           <p></p>
-          <Card image={lays} title="Fries (Lays)" count={shelf.countLays}></Card>
+          <Card image={lays} title="Crisps" count={shelf.countLays}></Card>
           <Card image={kinder} title="Kinder Bar" count={shelf.countKinder}></Card>
           <Card image={mm} title="M&Ms" count={shelf.countMM}></Card>
           <Card image={sticker} title="Stickers" count={shelf.countSticker}></Card>
