@@ -19,15 +19,25 @@ var totalcost = 0;
 var Price = [1,1,1,1,1,1,1]; //Update with your products prices
 var srcImg = '';
 var prevSrcImg = '';
+<<<<<<< HEAD
+
+=======
 ​
+>>>>>>> a01249185efee4a7d5d94651978bcf71cfac664d
 function renderItems(items) {
     //Print timestamp in receipt...
     var today = new Date().toLocaleString();
     document.getElementById("time").innerHTML=today;
     var Receipt = document.getElementById("myReceipt");
+<<<<<<< HEAD
+
+    //console.log(items);
+
+=======
 ​
     //console.log(items);
 ​
+>>>>>>> a01249185efee4a7d5d94651978bcf71cfac664d
     //Add purchased items to receipt...
     for(var i=0, len = items.length; i<len; i++) {
         if (Counts[i] == 1000) {
@@ -65,7 +75,11 @@ function renderItems(items) {
             Counts[i] = items[i].count.N;
             //Personalization...
             prevSrcImg = srcImg;
+<<<<<<< HEAD
+
+=======
 ​
+>>>>>>> a01249185efee4a7d5d94651978bcf71cfac664d
             if (items[i].ProductType.S == 'lays') {
                 srcImg = './media/favorite_walkers.png';
                 document.getElementById("myFavorite").src=srcImg;
@@ -86,7 +100,11 @@ function renderItems(items) {
         else if (items[i].count.N > Counts[i]) {
             // Item count is increasing... (i.e. inventory replenishment, returned product)...
             Counts[i] = items[i].count.N;
+<<<<<<< HEAD
+
+=======
 ​
+>>>>>>> a01249185efee4a7d5d94651978bcf71cfac664d
             if (Purch[i] == 1) {
                 //Only one item left, row needs to be removed...
                 var row = Receipt.deleteRow(1);
@@ -99,14 +117,22 @@ function renderItems(items) {
                     document.getElementById("myFavorite").src='./media/favorite_walkers.png';
                 }
                 totalcost = totalcost - Price[i];
+<<<<<<< HEAD
+
+=======
 ​
+>>>>>>> a01249185efee4a7d5d94651978bcf71cfac664d
             } 
             else if (Purch[i] > 1) {
                 //Returning one of the items, still one or more in the ...
                 Purch[i]--;
                 var subtotal = Purch[i]*Price[i];
                 totalcost = totalcost - Price[i];
+<<<<<<< HEAD
+
+=======
 ​
+>>>>>>> a01249185efee4a7d5d94651978bcf71cfac664d
                 for (var j=0; j<Receipt.rows.length; j++) {
                     if (Receipt.rows[j].cells[0].innerHTML == items[i].ProductType.S) {
                         Receipt.rows[j].cells[1].innerHTML = Purch[i];
