@@ -191,14 +191,14 @@ function Body() {
           </Typography>
           <p></p>
           <div class="selected">
-            <img src={shelf.s3UriSnacks} alt="Detections"  width="90%"/>
+            <img src={shelf.s3UriSnacks} alt="Detections"  width="100%"/>
           </div>
           <p></p>
-          <Typography variant="h5" style={{ textAlign: "center", padding: 2, color: "white", fontWeight: "bold"  }}>
+          {/*<Typography variant="h5" style={{ textAlign: "center", padding: 2, color: "white", fontWeight: "bold"  }}>
             Beverages Monitoring
           </Typography>
           <p></p>
-          <img src={shelf.s3UriBeverages} alt="Detections" width="40%"/>    
+          <img src={shelf.s3UriBeverages} alt="Detections" width="40%"/>*/}
         </div>
 
         <div class="float-child">
@@ -211,8 +211,8 @@ function Body() {
           <Card image={mm} title="M&Ms" count={shelf.countMM}></Card>
           <Card image={sticker} title="Stickers" count={shelf.countSticker}></Card>
           <Card image={pen} title="Pens" count={shelf.countPen}></Card>
-          <Card image={coke} title="Coke" count={shelf.countCoke}></Card>
-          <Card image={h2o} title="Water" count={shelf.countH2O}></Card>
+          {/*<Card image={coke} title="Coke" count={shelf.countCoke}></Card>
+          <Card image={h2o} title="Water" count={shelf.countH2O}></Card>*/}
           <p></p>
         </div>
     </div>
